@@ -70,7 +70,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>WebGIS Peta Lokasi Objek dibuat untuk menampilkan informasi lokasi objek yang dikembangkan dengan CodeIgniter 4 dan database PostgreSQL.</p>
+            <p>WebGIS Peta Lokasi Objek dibuat untuk menampilkan informasi lokasi objek Kabupaten Wonogiri.</p>
             <p>Dibuat oleh Erlin Dwi Prabandari</p>
           </div>
           <div class="modal-footer">
@@ -83,7 +83,16 @@
     <script>
       /* Initial Map */
       //Wonogiri
-      var map = L.map('map').setView([-7.774668790013626, 110.3745364114929], 10);
+      var map = L.map('map').setView([-7.868916412973618, 110.92051439826828], 12);
+
+      /* Layer Marker */
+      var marker1 = L.marker([-7.808174327373183, 110.9285726383294], { draggable: true });
+      marker1.addTo(map);
+      marker1.bindPopup('Alun-Alun Giri Krida Bakti');
+
+      var marker2 = L.marker([-7.8347705461948065, 110.94295533383772]);
+      marker2.addTo(map);
+      marker2.bindPopup('Plaza Bendungan Gajah Mungkur');
 
       /* Tile Basemap */
       var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

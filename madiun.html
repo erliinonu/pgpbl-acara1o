@@ -70,7 +70,7 @@
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <p>WebGIS Peta Lokasi Objek dibuat untuk menampilkan informasi lokasi objek yang dikembangkan dengan CodeIgniter 4 dan database PostgreSQL.</p>
+            <p>WebGIS Peta Lokasi Objek dibuat untuk menampilkan informasi lokasi objek Kota Madiun.</p>
             <p>Dibuat oleh Erlin Dwi Prabandari</p>
           </div>
           <div class="modal-footer">
@@ -83,7 +83,16 @@
     <script>
       /* Initial Map */
       //Madiun
-      var map = L.map('map').setView([-7.627336765515731, 111.52805114102368], 10);
+      var map = L.map('map').setView([-7.627336765515731, 111.52805114102368], 13);
+
+      /* Layer Marker */
+      var marker1 = L.marker([-7.629137988294803, 111.51672052055889], { draggable: true });
+      marker1.addTo(map);
+      marker1.bindPopup('Alun-Alun Kota Madiun');
+
+      var marker2 = L.marker([-7.64814462590586, 111.53104269225689]);
+      marker2.addTo(map);
+      marker2.bindPopup('Kantor DRPD Kota Madiun');
 
       /* Tile Basemap */
       var basemap = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
